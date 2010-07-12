@@ -3,12 +3,119 @@
 <head>
   <meta charset="UTF-8">
   <title>jQuery Jumbotron</title>
+  <style>
+    body{
+      background:#000;
+      color:#999;
+      font:normal 75% "Helvetica Neue", Helvetica, Arial, sans-serif;
+      width:940px;
+      margin:0 auto;
+      padding:20px;
+    }
+    header, section, footer{
+      display:block;
+      clear:both;
+    }
+    a:link{
+      text-decoration:none;
+      color:#fff;
+    }
+    a:visited, a:hover{
+      color:#ddd;
+      text-decoration:underline;
+    }
+    #news, #articles{
+      color:#fff;
+      width:430px;
+      padding:10px;
+      margin:10px;
+      background:rgba(255,255,255,0.3);
+      float:left;
+      border-radius:10px;
+      -webkit-border-radius:10px;
+      -moz-border-radius:10px;
+      -khtml-border-radius:10px;
+    }
+    #news a, #articles a{
+      color:#399;
+    }
+    p{
+      margin:0;
+      line-height:22px;
+      font-size:1.3em;
+    }
+    p a{
+      font-size:0.8em;
+    }
+    .ui-tabs-hide{
+      display:none;
+    }
+    ul, li{
+      list-style-type:none;
+      margin:0;
+      padding:0;
+    }
+    ul a{
+      display:block;
+      padding:5px 10px;
+      margin:5px 0;
+      background:rgba(255,255,255,0.5);
+      border-radius:3px;
+      -webkit-border-radius:3px;
+      -moz-border-radius:3px;
+      -khtml-border-radius:3px;
+      color:#006 !important;
+      font-size:1.1em;
+      font-weight:bold;
+    }
+    ul a:hover, ul .ui-state-active a{
+      text-decoration:none !important;
+      color:#333 !important;
+      background:rgba(255,255,255,1);
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>jQuery Jumbotron Demonstration</h1>
   </header>
   <section>
+    <div id="news">
+    	<ul>
+    		<li><a href="#news-1">Wikihood, Osmos and other great iPad Apps of the Week</a></li>
+    		<li><a href="#news-2">Why AT&amp;T’s world revolves around integrated devices</a></li>
+    		<li><a href="#news-3">Genius Scan iPhone app a smart buy for those on the fly</a></li>
+    	</ul>
+    	<div id="news-1">
+    		<p>Plenty of great apps for the iPad were released this past week, including a couple iPhone favorites reworked for the iPad. Here are five of our favorite new releases for the iPad.</p>
+    		<p><a href="#">Read full article&nbsp;&#187;</a></p>
+    	</div>
+    	<div id="news-2">
+    		<p>While the Mayan calendar anticipates that the end of the world as we know it will occur in 2012, AT&T is planning for a human reality that revolves around mobile integration.</p>
+    		<p><a href="#">Read full article&nbsp;&#187;</a></p>
+    	</div>
+    	<div id="news-3">
+    		<p>Need to scan an important document but aren’t near a business center? The free Genius Scan iPhone app is perfect for the business traveler who needs to scan on the fly.</p>
+    		<p><a href="#">Read full article&nbsp;&#187;</a></p>
+    	</div>
+    </div>
+    
+    <div id="articles">
+    	<ul>
+    		<li><a href="#article-1">Wikihood, Osmos and other great iPad Apps of the Week</a></li>
+    		<li><a href="#article-2">Why AT&amp;T’s world revolves around integrated devices</a></li>
+    		<li><a href="#article-3">Genius Scan iPhone app a smart buy for those on the fly</a></li>
+    	</ul>
+    	<div id="article-1">
+    		<p>Plenty of great apps for the iPad were released this past week, including a couple iPhone favorites reworked for the iPad. Here are five of our favorite new releases for the iPad.</p>
+    	</div>
+    	<div id="article-2">
+    		<p>While the Mayan calendar anticipates that the end of the world as we know it will occur in 2012, AT&T is planning for a human reality that revolves around mobile integration.</p>
+    	</div>
+    	<div id="article-3">
+    		<p>Need to scan an important document but aren’t near a business center? The free Genius Scan iPhone app is perfect for the business traveler who needs to scan on the fly.</p>
+    	</div>
+    </div>
     
   </section>
   <footer>
@@ -17,9 +124,13 @@
   <script src="http://www.google.com/jsapi"></script>
   <script>
     google.load('jquery','1.4.2');
+    google.load('jqueryui','1.8.2')
   </script>
   <script>
-    
+    $('#news').tabs();
+    $('#articles').tabs({
+      event: 'mouseover'
+    });
   </script>
 </body>
 </html>
